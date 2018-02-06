@@ -1,0 +1,70 @@
+<div class="container">
+	<form #form="ngForm" novalidate>
+		<div class="form-group">
+			<label>First Name:</label>
+			<br/> <input class="form-control" type="text" id="firstName" name="firstName" [(ngModel)]="model.firstName" required /><br/>
+				<!--			Model: {{ model | json }}
+							<br/><br/>
+							Angular: {{ form.value | json }}
+							<br/><br/>
+				-->
+			<label>Last Name:</label>
+			<br/> <input class="form-control" type="text" id="lastName" name="lastName" [(ngModel)]="model.lastName" required /><br/>
+			<label>Email:</label>
+			<br/> <input class="form-control" type="email" id="emailAddress" name="Email" [(ngModel)]="model.Email" required /><br/>
+			<label>Contact Number:</label>
+			<br/> <input class="form-control" type="text" id="contact" name="ContactNumber" [(ngModel)]="model.ContactNumber" required /><br/>
+			<label>Address:</label>
+			<br/> <textarea class="form-control" id="address" name="Address" [(ngModel)]="model.Address" required > </textarea><br/>
+			<label>Username:</label>
+			<br/> <input class="form-control" type="text" id="username" name="Username" [(ngModel)]="model.Username" required /><br/>
+			<label>Password:</label>
+			<br/> <input class="form-control" type="password" id="pwd" name="Password" [(ngModel)]="model.Password" required /><br/>
+		</div>
+		
+		<label>Gender:</label>
+		<div class="radio">
+			<label><input type="radio" id="male" name="Gender" value="Male" [(ngModel)]="model.Gender" required />Male</label><br/>
+		</div>
+		<div class="radio">
+			<label><input type="radio" id="female" name="Gender" value="Female" [(ngModel)]="model.Gender" required />Female</label><br/><br/> 
+		</div>
+		
+		<div class="form-group">
+		<label>Qualification:</label><br/>
+		<select class="form-control" name="qualification" [(ngModel)]="model.qualification">
+				<option *ngFor="let qual of qualification">
+					{{ qual }}
+			</select><br/>
+		</div>
+
+		<div class="form-group">
+			<label>Experience:</label><br/>
+			<select class="form-control" name="experience" [(ngModel)]="model.experience">
+				<option *ngFor="let exp of experience">
+					{{ exp }}
+			</select><br/>
+		</div>
+		
+		<label>Coding Languages:</label><br/>
+		<div class="checkbox">
+			<label><input type="checkbox" id="C/C++" name="C" value="C/C++" [(ngModel)]="model.C" required />C/C++</label><br/>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" id="Java" name="Java" value="Java" [(ngModel)]="model.Java" required />Java</label><br/>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" id="C#" name="CSharp" value="C#" [(ngModel)]="model.CSharp"/>C#</label><br/>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" id="PHP" name="PHP" value="PHP" [(ngModel)]="model.PHP"/>PHP</label><br/>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" id="Python" name="Python" value="Python" [(ngModel)]="model.Python"/>Python</label><br/><br/>
+		</div>
+			
+			<button class="btn btn-primary" type="submit" (click)="OnFormSubmit(model)">Submit</button>
+		
+	</form>
+
+</div>
